@@ -6,7 +6,7 @@ resource "aws_instance" "creating" {
   tags = var.ec2_tags
 
   provisioner "local-exec" {
-    command = "${self.private_ip} >> inventory"
+    command = "${self.private_ip} > inventory"
     on_failure = continue #ignoring errors
   }
 
@@ -37,7 +37,7 @@ resource "aws_instance" "creating" {
   provisioner "remote-exec" {
     when = destroy
     inline = [
-      "sudo systemctl stop nginx || true"
+      "sudo systemctl stop nginx || true "
     ]
   }
 }

@@ -8,8 +8,8 @@ terraform {
 
   
   backend "s3" {
-    bucket         = "vijaykumar-dev"
-    key            = "docker-dock"
+    bucket         = "jay-kumar-ford"
+    key            = "ong-docker"
     region         = "us-east-1"
     encrypt = true
     use_lockfile = true
